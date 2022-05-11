@@ -1,23 +1,26 @@
 import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
 
 function App() {
+  const [email, setEmail] = useState('') 
+  const [password, setPassword] = useState('') 
+
+  function onSubmitForm(event) {
+    event.preventDefault();
+    console.log(email)
+    console.log(password)
+  }
+
+  
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <form onSubmit={onSubmitForm}>
+        <input onChange={event => setEmail(event.currentTarget.value)} placeholder="Email"/> <br></br>
+        <input onChange={event => setPassword(event.currentTarget.value)} placeholder="Password" type="password"/><br></br>
+        <button type='submit'>Submit</button>
+      </form>
     </div>
   );
 }

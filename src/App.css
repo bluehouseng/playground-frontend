@@ -8,6 +8,12 @@
   pointer-events: none;
 }
 
+.form-control {
+  width: 20rem;
+  margin-bottom: 3rem;
+  padding: 1rem;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

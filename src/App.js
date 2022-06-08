@@ -3,10 +3,11 @@ import { useState, useEffect } from 'react';
 
 function App() {
   const [data, setData] = useState({})
+
   const [message, setMessage] = useState({})
 
   function updateState(event) {
-    const { name, value } = event.target;
+    const { name, value } = event.target; 
     const obj = {...data}
     obj[name] = value
     setData(obj);
@@ -26,17 +27,18 @@ function App() {
     .catch(err => console.log(err))
   }
 
+
   return (
     <>
     <div className='App'>
       <form className='' style={{paddingBottom: '2rem'}} onSubmit={httpRegisterUser}>
         {message.successful && <p>{message.message}</p>}
-        <input className='form-control' name="fullName" onChange={updateState} placeholder='Enter fullname'/><br></br>
-        <input className='form-control' name="username" onChange={updateState} placeholder='Enter username'/><br></br>
-        <input className='form-control' name="phone" onChange={updateState} placeholder='Enter mobile no.'/><br></br>
-        <input className='form-control' name="email" onChange={updateState}  placeholder='Enter email' type="email"/><br></br>
-        <input className='form-control' name="password" onChange={updateState} placeholder='******' type="password"/><br></br>
-        <select className='form-control'name="gender" onChange={updateState}>
+        <input className='form-control' name="fullName" autoComplete="" onChange={updateState} placeholder='Enter fullname'/><br></br>
+        <input className='form-control' name="username" autoComplete="" onChange={updateState} placeholder='Enter username'/><br></br>
+        <input className='form-control' name="phone" autoComplete="" onChange={updateState} placeholder='Enter mobile no.'/><br></br>
+        <input className='form-control' name="email" autoComplete="" onChange={updateState}  placeholder='Enter email' type="email"/><br></br>
+        <input className='form-control' name="password" autoComplete="" onChange={updateState} placeholder='******' type="password"/><br></br>
+        <select className='form-control'name="gender" autoComplete="" onChange={updateState}>
           <option>select gender</option>
           <option value="male">male</option>
           <option value="female">female</option>
